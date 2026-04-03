@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { API_ENDPOINTS } from "../config/api";
 import "./History.css";
 
 function History() {
@@ -14,7 +15,7 @@ function History() {
   const fetchHistory = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/predict/history", {
+      const res = await axios.get(API_ENDPOINTS.HISTORY, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setHistory(res.data);

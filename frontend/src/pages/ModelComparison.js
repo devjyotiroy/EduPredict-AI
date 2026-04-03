@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_ENDPOINTS } from "../config/api";
 
 function ModelComparison() {
   const [comparison, setComparison] = useState(null);
@@ -10,7 +11,7 @@ function ModelComparison() {
 
   const fetchComparison = async () => {
     try {
-      const res = await axios.get("http://127.0.0.1:5001/model-comparison");
+      const res = await axios.get(API_ENDPOINTS.MODEL_COMPARISON);
       setComparison(res.data);
     } catch (err) {
       console.log(err);

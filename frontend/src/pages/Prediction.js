@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { API_ENDPOINTS } from "../config/api";
 import "./Prediction.css";
 
 function Prediction() {
@@ -75,7 +76,7 @@ function Prediction() {
 
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        "http://localhost:5000/api/predict",
+        API_ENDPOINTS.PREDICT,
         formattedData,
         { headers: { Authorization: `Bearer ${token}` } }
       );

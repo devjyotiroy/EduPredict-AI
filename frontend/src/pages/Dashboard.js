@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Bar, Line, Pie } from "react-chartjs-2";
 import { useNavigate } from "react-router-dom";
+import { API_ENDPOINTS } from "../config/api";
 import "./Dashboard.css";
 
 import {
@@ -40,7 +41,7 @@ function Dashboard() {
   const fetchAnalytics = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/predict/analytics", {
+      const res = await axios.get(API_ENDPOINTS.ANALYTICS, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setAnalytics(res.data);

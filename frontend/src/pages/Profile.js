@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { API_ENDPOINTS } from "../config/api";
 import "./Profile.css";
 
 function Profile() {
@@ -24,7 +25,7 @@ function Profile() {
   const fetchProfile = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/profile", {
+      const res = await axios.get(API_ENDPOINTS.PROFILE, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (res.data._id) {
@@ -45,7 +46,7 @@ function Profile() {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token");
-      await axios.post("http://localhost:5000/api/profile", profile, {
+      await axios.post(API_ENDPOINTS.PROFILE, profile, {
         headers: { Authorization: `Bearer ${token}` }
       });
       alert("Profile updated successfully!");
