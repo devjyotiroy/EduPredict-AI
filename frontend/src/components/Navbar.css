@@ -1,0 +1,169 @@
+.navbar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav-logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  font-size: 2rem;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.nav-link:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255,255,255,0.1);
+}
+
+.profile-icon {
+  font-size: 1.2rem;
+}
+
+.nav-btn {
+  background: white;
+  color: #667eea;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.logout-btn {
+  background: #ff4757;
+  color: white;
+}
+
+.hamburger {
+  display: none;
+}
+
+/* Mobile Bottom Navigation - Instagram Style */
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    background: white;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .nav-container {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .nav-logo {
+    display: none;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .nav-menu {
+    width: 100%;
+    justify-content: space-around;
+    padding: 8px 0;
+    gap: 0;
+  }
+
+  .nav-link {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 4px;
+    color: #6b7280;
+    font-size: 0.65rem;
+    border-radius: 0;
+    gap: 2px;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+
+  .nav-link:hover,
+  .nav-link:active {
+    background: transparent;
+    color: #667eea;
+  }
+
+  .nav-link::before {
+    content: attr(data-icon);
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+
+  .profile-link {
+    background: transparent;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .profile-link .profile-icon {
+    font-size: 1.4rem;
+    display: block;
+  }
+
+  .profile-link span:last-child {
+    font-size: 0.65rem;
+  }
+
+  .nav-btn {
+    display: none;
+  }
+
+  .logout-btn {
+    display: none;
+  }
+}

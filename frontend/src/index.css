@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Enhanced typography */
+  font-size: 16px;
+  line-height: 1.5;
+  color: #212121;
+  
+  /* Better text rendering */
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  
+  /* Smooth scrolling */
+  scroll-behavior: smooth;
+  
+  /* Background and overflow control */
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Improved code blocks */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  
+  /* Better code readability */
+  font-size: 0.9em;
+  padding: 0.2em 0.4em;
+  background-color: #f5f5f5;
+  border-radius: 3px;
+  
+  /* Optional: subtle border for depth */
+  border: 1px solid #eaeaea;
+}
+
+/* Optional: Better block code display */
+pre {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  padding: 1em;
+  overflow-x: auto;
+  line-height: 1.45;
+  
+  /* Maintain proper spacing */
+  margin: 1.5em 0;
+}
+
+pre code {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font-size: 0.9em;
+  
+  /* Reset any inherited styles */
+  border-radius: 0;
+  color: inherit;
+}
+
+/* Optional: Selection styling for better UX */
+::selection {
+  background-color: #b3d4fc;
+  color: #000000;
+  text-shadow: none;
+}
+
+/* Optional: Focus styles for accessibility */
+:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+/* Optional: Smooth transitions for interactive elements */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+}
+
+/* Optional: Dark mode support */
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #e0e0e0;
+    background-color: #121212;
+  }
+  
+  code {
+    background-color: #2d2d2d;
+    border-color: #404040;
+    color: #e0e0e0;
+  }
+  
+  pre {
+    background-color: #2d2d2d;
+  }
+  
+  ::selection {
+    background-color: #4a90e2;
+    color: #ffffff;
+  }
+}
