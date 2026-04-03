@@ -1,5 +1,7 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import joblib
+import os
 import numpy as np
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.tree import DecisionTreeClassifier
@@ -9,6 +11,7 @@ from sklearn.metrics import accuracy_score, mean_squared_error
 import pandas as pd
 
 app = Flask(__name__)
+CORS(app)
 
 # Load saved models
 performance_model = joblib.load("performance_model.pkl")
@@ -1169,4 +1172,5 @@ def model_comparison():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+    port = int(os.environ.get("PORT", 5001))
+    app.run(debug=False, host="0.0.0.0", port=port)
