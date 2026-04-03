@@ -13,7 +13,7 @@ router.post("/", authMiddleware, async (req, res) => {
   try {
     console.log("Prediction Request:", req.body);
 
-    const mlResponse = await axios.post("http://127.0.0.1:5001/predict", req.body);
+    const mlResponse = await axios.post(`${process.env.ML_SERVICE_URL || "http://127.0.0.1:5001"}/predict`, req.body);
     const result = mlResponse.data;
 
     console.log("ML Response:", result);
