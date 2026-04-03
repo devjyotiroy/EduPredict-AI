@@ -4,7 +4,8 @@ import "./Navbar.css";
 function Navbar() {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
-  const user = JSON.parse(localStorage.getItem("user") || "{}");
+  const rawUser = localStorage.getItem("user");
+  const user = rawUser && rawUser !== "undefined" ? JSON.parse(rawUser) : {};
 
   const handleLogout = () => {
     localStorage.removeItem("token");

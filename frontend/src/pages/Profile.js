@@ -17,7 +17,8 @@ function Profile() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user") || "{}");
+    const rawUser = localStorage.getItem("user");
+    const user = rawUser && rawUser !== "undefined" ? JSON.parse(rawUser) : {};
     setUserData({ name: user.name || "", email: user.email || "" });
     fetchProfile();
   }, []);
